@@ -57,6 +57,4 @@ jobs:
       
       - name: run a simple Maven build using Testcontainers
         run: ./mvnw -B verify
-        env:
-          DOCKER_HOST: $XDG_RUNTIME_DIR/podman/podman.sock
           
