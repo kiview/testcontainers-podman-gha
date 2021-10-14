@@ -26,7 +26,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
         with:
-          distribution: 'temurin's
+          distribution: 'temurin'
           java-version: '8'
 
       - name: Enable systemd user process
