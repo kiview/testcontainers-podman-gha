@@ -56,5 +56,5 @@ jobs:
       - run: echo $DOCKER_HOST
       
       - name: run a simple Maven build using Testcontainers
-        run: ./mvnw -B verify
+        run: ./mvnw -B -X verify
           
