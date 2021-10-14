@@ -49,9 +49,14 @@ jobs:
           sudo systemctl start podman
           systemctl --user enable --now podman.socket
           systemctl --user status podman.socket 
+
+      - name: Set DOCKER_HOST
+        run: echo "DOCKER_HOST=$XDG_RUNTIME_DIR/podman/podman.sock" >> $GITHUB_ENV
+
+      - run: echo $DOCKER_HOST
       
       - name: run a simple Maven build using Testcontainers
-        run: ./mvnw verify
+        run: ./mvnw -B verify
         env:
           DOCKER_HOST: $XDG_RUNTIME_DIR/podman/podman.sock
           
